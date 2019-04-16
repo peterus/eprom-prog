@@ -1,0 +1,53 @@
+Stückliste exportiert aus /home/pbuchegger/project/eprom-prog/schematic/eprom_prog.sch am 16.04.19 19:44
+
+Part         Value               Device              Package              Description                          MF MPN               OC_FARNELL OC_NEWARK
+B1           ARDUINO_MEGA_R3FULL ARDUINO_MEGA_R3FULL ARDUINO_MEGA_NO_SILK Arduino Mega R3                                                               
+C1           100n                C-EU050-024X044     C050-024X044         CAPACITOR, European symbol                                                    
+C2           220uF               CPOL-EUE2.5-6       E2,5-6               POLARIZED CAPACITOR, European symbol                                          
+C3           100n                C-EU050-024X044     C050-024X044         CAPACITOR, European symbol                                                    
+C4           220uF               CPOL-EUE2.5-6       E2,5-6               POLARIZED CAPACITOR, European symbol                                          
+C5           750p                C-EU050-024X044     C050-024X044         CAPACITOR, European symbol                                                    
+C6           220uF               CPOL-EUE2.5-6       E2,5-6               POLARIZED CAPACITOR, European symbol                                          
+D1           1N4148              1N4148DO35-7        DO35-7               DIODE                                                                         
+D2           1N4148              1N4148DO35-7        DO35-7               DIODE                                                                         
+D3           1N4148              1N4148DO35-7        DO35-7               DIODE                                                                         
+D4           1N4148              1N4148DO35-7        DO35-7               DIODE                                                                         
+D5           1N5819-B            1N5819-B            DO41-7.6             1.0A SCHOTTKY BARRIER RECTIFIER                                               
+D6           1N4148              1N4148DO35-7        DO35-7               DIODE                                                                         
+D7           1N4148              1N4148DO35-7        DO35-7               DIODE                                                                         
+GOLD_ORB_SM1 OSHWLOGOLOGO8MM     OSHWLOGOLOGO8MM     OSHW_8MM             The OSHW logo for PCB layout                                                  
+IC1          MC33063/MC34063P    MC33063/MC34063P    DIL08                MC33063 and MC34063                                                           
+K1           G5V1                G5V1                G5V1                 RELAY                                   G5V-1-DC24        9949593    36M6377  
+K2           G5V1                G5V1                G5V1                 RELAY                                   G5V-1-DC24        9949593    36M6377  
+K3           G5V1                G5V1                G5V1                 RELAY                                   G5V-1-DC24        9949593    36M6377  
+K4           G5V1                G5V1                G5V1                 RELAY                                   G5V-1-DC24        9949593    36M6377  
+K5           G5V1                G5V1                G5V1                 RELAY                                   G5V-1-DC24        9949593    36M6377  
+K6           G5V1                G5V1                G5V1                 RELAY                                   G5V-1-DC24        9949593    36M6377  
+L1           220uH               SD12-1000           SD12_1000            INDUCTOR                                                  unknown    unknown  
+Q1           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+Q2           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+Q3           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+Q4           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+Q5           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+Q6           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+Q7           BC557               BC557               TO92                 PNP Transistor                                                                
+Q8           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+Q9           BS170               BS170               SOT54E               N-CHANNEL MOS FET                                                             
+R1           3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R2           3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R3           3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R4           620                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R5           180                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R6           3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R7           3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R8           0.3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R9           3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R10          300                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R11          1k5                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R12          3k9                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R13          4k7                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R14          4k7                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R15          3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+R16          3k3                 R-EU_0207/2V        0207/2V              RESISTOR, European symbol                                                     
+T1           BC547               BC547               TO92                 NPN TRANSISTOR                                                                
+ZX1          232-1285-00-0602J   232-1285-00-0602J   232-1285-00-0602J    Zero Insertion Force Socked          3M 232-1285-00-0602J 9897402    85K7839  

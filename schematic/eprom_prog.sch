@@ -14790,6 +14790,7 @@ nominal inductance</description>
 <sheet>
 <plain>
 <text x="289.56" y="25.4" size="5.08" layer="91">CPU &amp; Sockel</text>
+<text x="375.92" y="7.62" size="2.54" layer="91">V1.0</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -15316,6 +15317,7 @@ nominal inductance</description>
 <sheet>
 <plain>
 <text x="289.56" y="25.4" size="5.08" layer="91">VPP Supply</text>
+<text x="375.92" y="7.62" size="2.54" layer="91">V1.0</text>
 </plain>
 <instances>
 <instance part="R5" gate="G$1" x="139.7" y="231.14"/>
