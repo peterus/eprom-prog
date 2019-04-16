@@ -1,0 +1,3 @@
+[submodule "AVRhal"]
+	path = AVRhal
+	url = https://github.com/peterus/AVRhal.git
