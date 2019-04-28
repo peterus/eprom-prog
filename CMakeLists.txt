@@ -75,5 +75,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/AVRhal/driver)
 ##########################################################################
 
 add_subdirectory(AVRhal)
+add_subdirectory(test)
 add_subdirectory(src)
 
