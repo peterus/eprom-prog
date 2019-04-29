@@ -38,9 +38,9 @@ gpio_t * vpp_on   = &gpio[ePORTG][2];
 
 gpio_t * sig_oe_vpp = &gpio[ePORTE][5];
 gpio_t * sig_add11_vpp = &gpio[ePORTH][5];
-gpio_t * sig_add13_vpp = &gpio[ePORTB][4];
+gpio_t * sig_add13_vcc = &gpio[ePORTB][4];
 gpio_t * sig_add15_vpp = &gpio[ePORTL][0];
-gpio_t * sig_add17_vpp = &gpio[ePORTB][6];
+gpio_t * sig_add17_vcc = &gpio[ePORTB][6];
 gpio_t * sig_add19_vpp = &gpio[ePORTD][7];
 
 gpio_t * CE = &gpio[ePORTC][5];
@@ -59,9 +59,9 @@ void reset_all(void)
 
 	set_output(sig_oe_vpp);
 	set_output(sig_add11_vpp);
-	set_output(sig_add13_vpp);
+	set_output(sig_add13_vcc);
 	set_output(sig_add15_vpp);
-	set_output(sig_add17_vpp);
+	set_output(sig_add17_vcc);
 	set_output(sig_add19_vpp);
 
 	set_output(CE);
@@ -71,15 +71,15 @@ void reset_all(void)
 	set_pins_map(&data_map, 0);
 	set_pins_map(&address_map, 0);
 
-	set_low(vpp_on);
+	set_high(vpp_on);
 	set_low(vpp_12v5);
 	set_low(vpp_21v);
 
 	set_low(sig_oe_vpp);
 	set_low(sig_add11_vpp);
-	set_low(sig_add13_vpp);
+	set_low(sig_add13_vcc);
 	set_low(sig_add15_vpp);
-	set_low(sig_add17_vpp);
+	set_low(sig_add17_vcc);
 	set_low(sig_add19_vpp);
 
 	set_low(CE);

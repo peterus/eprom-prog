@@ -25,11 +25,54 @@ int main(void)
 	{
 	}
 
+	DEBUG_OUT("will reset!\n");
 	reset_all();
+
+	while(UART_GetC() == UART_NO_DATA)
+	{
+	}
+
+	DEBUG_OUT("VPP on, 12.5V!\n");
+	set_high(vpp_12v5);
+	set_low(vpp_21v);
+	set_low(vpp_on);
+
+	while(UART_GetC() == UART_NO_DATA)
+	{
+	}
+
+	DEBUG_OUT("VPP on, 21V!\n");
+	set_low(vpp_12v5);
+	set_high(vpp_21v);
+	set_low(vpp_on);
+
+	while(UART_GetC() == UART_NO_DATA)
+	{
+	}
+
+	DEBUG_OUT("VPP off!\n");
+	set_low(vpp_12v5);
+	set_low(vpp_21v);
+	set_high(vpp_on);
+
+	while(UART_GetC() == UART_NO_DATA)
+	{
+	}
+
+	DEBUG_OUT("VPP on, 21V, VPP on ADD19/VPP!\n");
+	set_high(vpp_21v);
+	set_low(vpp_on);
+	set_high(sig_oe_vpp);
+	set_high(sig_add11_vpp);
+	set_high(sig_add13_vcc);
+	set_high(sig_add15_vpp);
+	set_high(sig_add17_vcc);
+	set_high(sig_add19_vpp);
+
+	DEBUG_OUT("Test finished!\n");
+	printf("TEST: %lu\n", (long unsigned int)max);
 	
 	while(1)
 	{
-		printf("TEST: %lu\n", (long unsigned int)max);
-		DEBUG_OUT("HALLOOOO\n");
 	}
 }

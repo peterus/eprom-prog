@@ -14,9 +14,9 @@ extern gpio_t * vpp_on;
 
 extern gpio_t * sig_oe_vpp;
 extern gpio_t * sig_add11_vpp;
-extern gpio_t * sig_add13_vpp;
+extern gpio_t * sig_add13_vcc;
 extern gpio_t * sig_add15_vpp;
-extern gpio_t * sig_add17_vpp;
+extern gpio_t * sig_add17_vcc;
 extern gpio_t * sig_add19_vpp;
 
 extern gpio_t * CE;
