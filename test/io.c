@@ -32,20 +32,20 @@ gpio_map_t address_map = {
 	}
 };
 
-gpio_t * vpp_12v5 = &gpio[ePORTA][1];
-gpio_t * vpp_21v  = &gpio[ePORTC][0];
-gpio_t * vpp_on   = &gpio[ePORTG][2];
+gpio_t * vpp_12v5_pin = &gpio[ePORTA][1];
+gpio_t * vpp_21v_pin  = &gpio[ePORTC][0];
+gpio_t * vpp_on_pin   = &gpio[ePORTG][2];
 
-gpio_t * sig_oe_vpp = &gpio[ePORTE][5];
-gpio_t * sig_add11_vpp = &gpio[ePORTH][5];
-gpio_t * sig_add13_vcc = &gpio[ePORTB][4];
-gpio_t * sig_add15_vpp = &gpio[ePORTL][0];
-gpio_t * sig_add17_vcc = &gpio[ePORTB][6];
-gpio_t * sig_add19_vpp = &gpio[ePORTD][7];
+gpio_t * sig_oe_vpp_pin    = &gpio[ePORTE][5];
+gpio_t * sig_add11_vpp_pin = &gpio[ePORTH][5];
+gpio_t * sig_add13_vcc_pin = &gpio[ePORTB][4];
+gpio_t * sig_add15_vpp_pin = &gpio[ePORTL][0];
+gpio_t * sig_add17_vcc_pin = &gpio[ePORTB][6];
+gpio_t * sig_add19_vpp_pin = &gpio[ePORTD][7];
 
-gpio_t * CE = &gpio[ePORTC][5];
-gpio_t * OE = &gpio[ePORTE][3];
-gpio_t * PGM = &gpio[ePORTA][0];
+gpio_t * CE_pin  = &gpio[ePORTC][5];
+gpio_t * OE_pin  = &gpio[ePORTE][3];
+gpio_t * PGM_pin = &gpio[ePORTA][0];
 
 
 void reset_all(void)
@@ -53,36 +53,36 @@ void reset_all(void)
 	set_output_map(&data_map);
 	set_output_map(&address_map);
 
-	set_output(vpp_on);
-	set_output(vpp_12v5);
-	set_output(vpp_21v);
+	set_output(vpp_on_pin);
+	set_output(vpp_12v5_pin);
+	set_output(vpp_21v_pin);
 
-	set_output(sig_oe_vpp);
-	set_output(sig_add11_vpp);
-	set_output(sig_add13_vcc);
-	set_output(sig_add15_vpp);
-	set_output(sig_add17_vcc);
-	set_output(sig_add19_vpp);
+	set_output(sig_oe_vpp_pin);
+	set_output(sig_add11_vpp_pin);
+	set_output(sig_add13_vcc_pin);
+	set_output(sig_add15_vpp_pin);
+	set_output(sig_add17_vcc_pin);
+	set_output(sig_add19_vpp_pin);
 
-	set_output(CE);
-	set_output(OE);
-	set_output(PGM);
+	set_output(CE_pin);
+	set_output(OE_pin);
+	set_output(PGM_pin);
 
 	set_pins_map(&data_map, 0);
 	set_pins_map(&address_map, 0);
 
-	set_high(vpp_on);
-	set_low(vpp_12v5);
-	set_low(vpp_21v);
+	set_high(vpp_on_pin);
+	set_low(vpp_12v5_pin);
+	set_low(vpp_21v_pin);
 
-	set_low(sig_oe_vpp);
-	set_low(sig_add11_vpp);
-	set_low(sig_add13_vcc);
-	set_low(sig_add15_vpp);
-	set_low(sig_add17_vcc);
-	set_low(sig_add19_vpp);
+	set_low(sig_oe_vpp_pin);
+	set_low(sig_add11_vpp_pin);
+	set_low(sig_add13_vcc_pin);
+	set_low(sig_add15_vpp_pin);
+	set_low(sig_add17_vcc_pin);
+	set_low(sig_add19_vpp_pin);
 
-	set_low(CE);
-	set_low(OE);
-	set_low(PGM);
+	set_low(CE_pin);
+	set_low(OE_pin);
+	set_low(PGM_pin);
 }
