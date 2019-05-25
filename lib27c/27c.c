@@ -19,16 +19,16 @@
 
 void setup_power(eprom_setting_t * setting)
 {
-	printf("vpp: %c\n", '0'+setting->vpp_power);
+	//printf("vpp: %c\n", '0'+setting->vpp_power);
 	if(setting->vpp_power == VPP_12V5)
 	{
-		DEBUG_OUT("Set VPP to 12.5V.\n");
+		//DEBUG_OUT("Set VPP to 12.5V.\n");
 		set_low(vpp_21v_pin);
 		set_high(vpp_12v5_pin);
 	}
 	else if(setting->vpp_power == VPP_21V)
 	{
-		DEBUG_OUT("Set VPP to 21V.\n");
+		//DEBUG_OUT("Set VPP to 21V.\n");
 		set_low(vpp_12v5_pin);
 		set_high(vpp_21v_pin);
 	} else {

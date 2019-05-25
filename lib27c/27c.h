@@ -4,8 +4,8 @@
 
 enum vpp_e
 {
-	VPP_12V5,
-	VPP_21V,
+	VPP_12V5 = 0,
+	VPP_21V  = 1,
 };
 
 enum add_or_v_e
