@@ -40,4 +40,7 @@ void program_data_start(eprom_setting_t * setting);
 void program_data(eprom_setting_t * setting, uint32_t address, uint8_t data);
 void program_data_end(eprom_setting_t * setting);
 
+
+extern eprom_setting_t * eprom_settings[];
+
 #endif

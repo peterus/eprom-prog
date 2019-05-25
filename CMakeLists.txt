@@ -69,12 +69,15 @@ endif(NOT CMAKE_BUILD_TYPE)
 ##########################################################################
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/AVRhal/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/AVRhal/driver)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib27c)
 
 ##########################################################################
 # building library and application in their subdirectories
 ##########################################################################
 
 add_subdirectory(AVRhal)
-add_subdirectory(test)
+add_subdirectory(lib27c)
+add_subdirectory(test_io)
+add_subdirectory(test_ascii)
 add_subdirectory(src)
 

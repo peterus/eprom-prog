@@ -9,7 +9,7 @@
 # Matthias Kleemann
 ##########################################################################
 
-SET(EXECUTABLE_NAME "EPROM-Test")
+SET(EXECUTABLE_NAME "EPROM-Test-IO")
 
 FILE(GLOB_RECURSE _SOURCES *.c)
 FILE(GLOB_RECURSE _HEADERS *.h)
@@ -17,5 +17,5 @@ SOURCE_GROUP("Header Files" FILES ${_HEADERS})
 
 add_avr_executable(${EXECUTABLE_NAME} ${_SOURCES} ${_HEADERS})
 
-avr_target_link_libraries(${EXECUTABLE_NAME} HAL)
+avr_target_link_libraries(${EXECUTABLE_NAME} lib27c HAL)
 

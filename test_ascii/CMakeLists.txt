@@ -9,7 +9,7 @@
 # Matthias Kleemann
 ##########################################################################
 
-SET(EXECUTABLE_NAME "EPROM-PROG")
+SET(EXECUTABLE_NAME "EPROM-Test-ASCII")
 
 FILE(GLOB_RECURSE _SOURCES *.c)
 FILE(GLOB_RECURSE _HEADERS *.h)
