@@ -87,13 +87,21 @@ void set_address(void)
 
 void read_data_(void)
 {
-	unsigned int length = 0;
-	while((length = UART_GetC()) == UART_NO_DATA) {} // 2. byte: length to read in bytes
-	uint32_t len = length & 0xFF;
+	uint16_t length = 0;
+	uint8_t upper = 0;
+	uint8_t lower = 0;
+	unsigned int buffer = 0;
+
+	while((buffer = UART_GetC()) == UART_NO_DATA) {} // 2. byte: length (higher byte)
+	upper = buffer & 0xFF;
+	while((buffer = UART_GetC()) == UART_NO_DATA) {} // 3. byte: length (lower byte)
+	lower = buffer & 0xFF;
+
+	length = upper << 8 | lower;
 
 	UART_PutByte(0x13);
 	read_data_start(eprom_setting);
-	for(uint8_t i = 0; i < len; i++)
+	for(uint16_t i = 0; i < length; i++)
 	{
 		uint32_t data = read_data(eprom_setting, address);
 		UART_PutByte((uint8_t)data);
@@ -102,15 +110,30 @@ void read_data_(void)
 	read_data_end(eprom_setting);
 }
 
+void write_data_start(void)
+{
+	program_data_start(eprom_setting);
+	UART_PutByte(0x14);
+}
+
 void write_data_(void)
 {
-	unsigned int length = 0;
-	while((length = UART_GetC()) == UART_NO_DATA) {} // 2. byte: length to read in bytes
+	uint16_t length = 0;
+	uint8_t upper = 0;
+	uint8_t lower = 0;
+	unsigned int buffer = 0;
 
-	UART_PutByte(0x14);
-	UART_PutByte((uint8_t)length);
-	program_data_start(eprom_setting);
-	for(uint8_t i = 0; i < length; i++)
+	while((buffer = UART_GetC()) == UART_NO_DATA) {} // 2. byte: length (higher byte)
+	upper = buffer & 0xFF;
+	while((buffer = UART_GetC()) == UART_NO_DATA) {} // 3. byte: length (lower byte)
+	lower = buffer & 0xFF;
+
+	length = upper << 8 | lower;
+
+	UART_PutByte(0x15);
+	UART_PutByte(upper);
+	UART_PutByte(lower);
+	for(uint16_t i = 0; i < length; i++)
 	{
 		unsigned int data = 0;
 		while((data = UART_GetC()) == UART_NO_DATA) {} // x. byte: data
@@ -118,13 +141,37 @@ void write_data_(void)
 		UART_PutByte((uint8_t)data);
 		address++;
 	}
-	program_data_end(eprom_setting);
+}
 
+void write_data_end(void)
+{
+	program_data_end(eprom_setting);
+	UART_PutByte(0x16);
+}
+
+void verify_empty(void)
+{
+	uint8_t status = 0;
+	read_data_start(eprom_setting);
+	for(uint32_t i = 0; i < eprom_setting->max_data; i++)
+	{
+		uint32_t data = read_data(eprom_setting, i);
+		if(data != 0xFF)
+		{
+			status = 1;
+		}
+	}
+	read_data_end(eprom_setting);
+	UART_PutByte(0x17);
+	UART_PutByte(status);
 }
 
 int main(void)
 {
-	UART_Init(UART_BAUD_SELECT(9600, F_CPU));
+	// 19200
+	// 57600
+	// 115200
+	UART_Init(UART_BAUD_SELECT(57600, F_CPU));
 	interrupts(1); //sei();
 
 	reset_all();
@@ -147,8 +194,16 @@ int main(void)
 				read_data_();
 				break;
 			case 0x04:
+				write_data_start();
+				break;
+			case 0x05:
 				write_data_();
 				break;
+			case 0x06:
+				write_data_end();
+				break;
+			case 0x07:
+				verify_empty();
 			default:
 				break;
 		}
